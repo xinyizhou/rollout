@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <title>RollOut</title> 
+        
+        <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+        <link href="/static/css/facebox.css" type="text/css" rel="stylesheet">
+        <!--[if lt IE 8]><link href="/static/css/ie.css" type="text/css" rel="stylesheet"><![endif]-->
+        {% block css_content %}{% endblock %}
+        
+        <script type="text/javascript" src="/static/javascript/jquery.js"></script>
+        <script type='text/javascript' src='/static/javascript/jquery.facebox.js'></script>
+        {% block js_content %}{% endblock %}
+        
+    </head>
+    
+    <body> 
+        <div id="hld">
+            <div class="wrapper">
+                <div id="header">
+                    <h1><a href="/">RollOut</a></h1>
+                    
+                    <ul id="nav">
+                        {% pyif request.user.id > 0 %}
+                            <li><a href="/">Dashboard</a></li>
+                            <li><a href="/deploy/">Deploy</a>
+                                <ul>
+                                    <li><a href="/deploy/">New</a></li>
+                                    <li><a href="/deploy/queue/">Queue</a></li>
+                                    <li><a href="/deploy/history/">History</a></li>
+                                </ul>
+                            </li>
+                        {% endif %}
+                    </ul>
+                    
+                    <p class="user">
+                        {% pyif request.user.id > 0 %}
+                            Hello, <a href="/profile/">{{request.user}}</a> | 
+                            <a href="/logout/">Logout</a>
+                            {% pyif request.user.is_staff %}
+                                 | <a href="/admin/">Admin</a>
+                            {% endif %}
+                        {% else %}
+                            <a href="/login/">Login</a>
+                        {% endif %}
+                    </p>
+                </div>
+                
+                
+                {% block main_content %}{% endblock %}
+
+            </div>
+        </div>
+    </body>
+</html>
