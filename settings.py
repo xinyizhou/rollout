@@ -47,6 +47,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'middleware.auth.LoginRequiredMiddleware',
     'middleware.error.AjaxErrorMiddleware',
 )
@@ -58,6 +59,11 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.auth',
+    'django.core.context_processors.request',
 )
 
 INSTALLED_APPS = (
