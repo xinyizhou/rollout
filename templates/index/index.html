@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+    {% pyif setup.domain %}
+        <div class="left_section">
+            <div class="block small ">
+                <div class="block_head">
+                    <h2>Domain List</h2>
+                    
+                    <ul> 
+                        <li><a href="/domain/add/">Add Domain</a></li> 
+                    </ul>
+                </div>  
+                
+                <div class="block_content">
+                    {{id}}
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <th>Domain</th>
+                                <th>Active</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for domain in domains %}
+                                <tr class="{% cycle 'row' 'row2' %}">
+                                    <td>{{domain.domain}}</td>
+                                    <td>
+                                        {% pyif domain.active %}
+                                            <img src="/images/icons/yes.gif">
+                                        {% else %}
+                                            <img src="/images/icons/no.gif">
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="block small ">
+                <div class="block_head">
+                    <h2>Open Tickets</h2>
+                    
+                    <ul> 
+                        <li><a href="/support/create/">Create Ticket</a></li> 
+                    </ul>
+                </div>  
+                
+                <div class="block_content">
+                    <table width="100%">
+
+                        <tr>
+                            <th>Subject</th>
+                            <th>Status</th>
+                        </tr>
+
+                        {% for ticket in tickets %}
+                            <tr class="{% cycle 'row' 'row2' %}" url="/support/ticket/{{ticket.id}}/">
+                                <td>{{ticket.subject}}</td>
+                                <td>
+                                    {{ticket.get_status}}
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="2">No Open Tickets</td>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right_section">
+            <div class="block small ">
+                <div class="block_head">
+                    <h2>Quick Commands</h2>    
+                </div>  
+                
+                <div class="block_content">
+        
+                    <ul>
+                        <li><a href="/domain/email/">Setup Email</a></li>
+                        <li><a href="/domain/dns/">Setup DNS</a></li>
+                        <li><a href="/domain/apache/">Setup Apache</a></li>
+                        <li><a href="/domain/mysql/">Setup MySQL</a></li>
+                        <li><a href="/application/">Install Applications</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="block small ">
+                <div class="block_head">
+                    <h2>Usage Overview</h2>    
+                </div>  
+                
+                <div class="block_content">
+
+                </div>
+            </div>
+        </div>
+        
+    {% else %}
+        
+        {% pyif not request.user.is_staff %}}
+            {% pyif request.GET.new_user %}
+                <div class="message success">
+                    <p>
+                        You have setup your user account! Now can now setup your hosting service.
+                    </p>
+                </div> 
+            {% endif %}
+    
+            <div class="block small center login"> 
+                <div class="block_head"> 
+                    <h2>Add a Domain</h2> 
+                    <!--<ul> 
+                        <li><a href="#">back to the site</a></li> 
+                    </ul>-->
+                </div>
+            
+                <div class="block_content"> 
+                    <p>
+                        You need to enter a domain to take full advantage of our system. You can change this
+                        if needed.
+                    </p>
+                
+                    <form method="post" action="/">
+                        {{form.as_p}}
+                        
+                        <br />
+                        <p>
+                            <label>&nbsp;</label>
+                            <input class="submit small" type="submit" name="login" value="Create"/>
+        
+                        </p>
+                    </form>
+                </div>
+            </div>
+         {% endif %}
+    {% endif %}
+    
+    <script type="text/javascript"> 
+        jQuery(document).ready(function($) {
+            $("tr.row, tr.row2").bind("click", function(){ 
+                window.location = $(this).attr('url'); 
+            });
+        })
+    </script>
+{% endblock %}
