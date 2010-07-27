@@ -5,6 +5,11 @@
 DEBUG = True
 
 #
+# Developing?
+#
+LOCAL_DEVELOPMENT = True
+
+#
 # setup your database settings
 #
 DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
