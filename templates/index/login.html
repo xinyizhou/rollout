@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    
+    <div class="block small center login"> 
+        <div class="block_head"> 
+            <h2>Login</h2> 
+        </div>    
+    
+    
+        <div class="block_content"> 
+            <form method="post" action="{% url django.contrib.auth.views.login %}">
+                {{ form.as_p }}
+                
+                <br />
+                <p>
+                    <label>&nbsp;</label>
+                    <input class="submit small" type="submit" name="login" value="Login"/>
+                    <input class="submit small" type="reset" value="Cancel"/>
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
