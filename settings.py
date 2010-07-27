@@ -1,4 +1,6 @@
-# Django settings for rollback project.
+# Django settings for rollout project.
+
+import os
 
 from config import *
 
