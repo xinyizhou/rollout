@@ -47,6 +47,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'middleware.auth.LoginRequiredMiddleware',
+    'middleware.error.AjaxErrorMiddleware',
 )
 
 ROOT_URLCONF = 'rollout.urls'
@@ -65,4 +67,14 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'global_tags',
     'deploy'
+)
+
+LOGIN_URL = "/login/"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_URL = "/"
+SESSION_SAVE_EVERY_REQUEST = True
+LOGIN_EXEMPT_URLS = (
+     r'^/login/$',
+     r'^/logout/$',
+     r'^/static/(.*)$',
 )
