@@ -13,7 +13,7 @@ Author URI: http://themeforest.net/user/enstyled
 * { padding:0; margin:0; }
 	
 body {
-	background: #fbfbfb url(/images/bg.jpg) 0 0 repeat;
+	background: #fbfbfb url(/static/images/bg.jpg) 0 0 repeat;
 	font-family: "Lucida Grande", Verdana, sans-serif;
 	font-size: 12px;
 	color: #666;
@@ -39,7 +39,7 @@ a:hover {
 	}	
 	
 #hld {
-	background: url(/images/hld.jpg) 0 0 repeat-x;
+	background: url(/static/images/hld.jpg) 0 0 repeat-x;
 	min-height: 402px;
 	}
 	
@@ -56,7 +56,7 @@ a:hover {
 	height: 50px;
 	padding: 0 20px;
 	line-height: 50px;
-	background: url(/images/hdr.gif) 0 0 no-repeat;
+	background: url(/static/images/hdr.gif) 0 0 no-repeat;
 	color: #999;
 	font-weight: bold;
 	margin-bottom: 20px;
@@ -107,7 +107,7 @@ a:hover {
 	position: relative;
 	height: 50px;
 	padding: 0 10px;
-	background: url(/images/nsp.gif) center right no-repeat;
+	background: url(/static/images/nsp.gif) center right no-repeat;
 	line-height: 50px;
 	}
 	
@@ -177,7 +177,7 @@ a:hover {
 	font-weight: bold;
 	line-height: 30px;
 	color: #999;
-	background: url(/images/mbg.png) 0 0 repeat;
+	background: url(/static/images/mbg.png) 0 0 repeat;
 	}
 
 /* 2nd Menu Hover Persistence */
@@ -194,7 +194,7 @@ a:hover {
 #header #nav li.iehover li.iehover li a {
 	float: none;
 	color: #999;
-	background: url(/images/mbg.png) 0 0 repeat;
+	background: url(/static/images/mbg.png) 0 0 repeat;
 	}
 
 /* 3rd Menu Hover Persistence */
@@ -210,7 +210,7 @@ a:hover {
 #header #nav li:hover li:hover li:hover li a,
 #header #nav li.iehover li.iehover li.iehover li a {
 	color: #999;
-	background: url(/images/mbg.png) 0 0 repeat;
+	background: url(/static/images/mbg.png) 0 0 repeat;
 	}
 
 /* 4th Menu Hover */
@@ -257,7 +257,7 @@ a:hover {
 /* Blocks */
 
 .block {	
-	background: url(/images/bnd.gif) bottom center no-repeat;
+	background: url(/static/images/bnd.gif) bottom center no-repeat;
 	padding-bottom: 5px;
 	margin-bottom: 25px;
 	clear: both;
@@ -270,7 +270,7 @@ a:hover {
 	height: 54px;
 	line-height: 54px;
 	padding: 0 20px;
-	background: url(/images/bhead.gif) 0 0 no-repeat;
+	background: url(/static/images/bhead.gif) 0 0 no-repeat;
 	overflow: hidden;
 	}
 	
@@ -296,7 +296,7 @@ a:hover {
 	display: inline;
 	padding: 3px 0;
 	padding-left: 20px;
-	background: url(/images/phs.gif) 7px center no-repeat;
+	background: url(/static/images/phs.gif) 7px center no-repeat;
 	}
 	
 .block .block_head ul li.nobg { background: none; }
@@ -315,7 +315,7 @@ a:hover {
 
 .block .block_content {
 	overflow: hidden;
-	background: url(/images/bbg.gif) 0 0 repeat-y;
+	background: url(/static/images/bbg.gif) 0 0 repeat-y;
 	padding: 10px 20px 0;
 	}
 
@@ -430,7 +430,7 @@ a:hover {
 .block2 .block_content ul li {
 	margin-bottom: 5px;
 	padding-left: 15px;
-	background: url(/images/li.gif) 0 7px no-repeat;
+	background: url(/static/images/li.gif) 0 7px no-repeat;
  	}
  	
 .block .block_content ol li {
@@ -466,7 +466,7 @@ a:hover {
 	
 .message.errormsg {
 	border: 1px solid #e9c59b;
-	background: #ffecce url(/images/error.gif) 12px 12px no-repeat;
+	background: #ffecce url(/static/images/error.gif) 12px 12px no-repeat;
 	color: #e3302c;
 	}
 
@@ -475,24 +475,24 @@ a:hover {
 	overflow:hidden;
 	padding:10px 15px 10px 40px;
 	border: 1px solid #e9c59b;
-	background: #ffecce url(/images/error.gif) 12px 12px no-repeat;
+	background: #ffecce url(/static/images/error.gif) 12px 12px no-repeat;
 	color: #e3302c;
 	}
 .message.success {
 	border: 1px solid #bfde84;
-	background: #edfbd8 url(/images/success.gif) 12px 12px no-repeat;
+	background: #edfbd8 url(/static/images/success.gif) 12px 12px no-repeat;
 	color: #508600;
 	}
 		
 .message.info {
 	border: 1px solid #bbdbe0;
-	background: #ecf9ff url(/images/info.gif) 12px 12px no-repeat;
+	background: #ecf9ff url(/static/images/info.gif) 12px 12px no-repeat;
 	color: #0888c3;
 	}
 	
 .message.warning {
 	border: 1px solid #e5e181;
-	background: #fefde2 url(/images/warning.gif) 12px 12px no-repeat;
+	background: #fefde2 url(/static/images/warning.gif) 12px 12px no-repeat;
 	color: #666;
 	}
 	
@@ -501,7 +501,7 @@ a:hover {
 	float: right;
 	width: 16px;
 	height: 16px;
-	background: url(/images/close.png) 0 0 no-repeat;
+	background: url(/static/images/close.png) 0 0 no-repeat;
 	margin-top: 2px;
 	cursor: pointer;
 	-moz-opacity: 0.7;
@@ -589,11 +589,11 @@ a:hover {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	background: url('/images/sdd.jpg') center right no-repeat;
+	background: url('/static/images/sdd.jpg') center right no-repeat;
 	}
 
 .block form .cmf-skinned-select:hover {
-	background: url('/images/sdd_.jpg') center right no-repeat;
+	background: url('/static/images/sdd_.jpg') center right no-repeat;
 	}
 
 .block form div.cmf-skinned-text {
@@ -643,7 +643,7 @@ a:hover {
 	width: 85px;
 	height: 30px;
 	line-height: 30px;
-	background: url(/images/btns.gif) top center no-repeat;
+	background: url(/static/images/btns.gif) top center no-repeat;
 	border: 0;
 	font-family: "Titillium800", Helvetica, Arial, sans-serif;
 	font-size: 14px;
@@ -657,7 +657,7 @@ a:hover {
 	}
 	
 .block form input.submit:hover {
-	background: url(/images/btns_.gif) top center no-repeat;
+	background: url(/static/images/btns_.gif) top center no-repeat;
 	text-shadow: 1px 1px 0 #b55f10;
 	}
 
@@ -671,23 +671,23 @@ a:hover {
 	font-size: 10px;
 	font-weight: bold;
 	text-transform: none;
-	background: url(/images/tiny.gif) top center no-repeat;
+	background: url(/static/images/tiny.gif) top center no-repeat;
 	}
 	
-.block form input.submit.tiny:hover { background: url(/images/tiny_.gif) top center no-repeat; }
+.block form input.submit.tiny:hover { background: url(/static/images/tiny_.gif) top center no-repeat; }
 	
-.block form input.submit.mid { width: 115px; background: url(/images/btnm.gif) top center no-repeat; }
-.block form input.submit.mid:hover { background: url(/images/btnm_.gif) top center no-repeat; }
+.block form input.submit.mid { width: 115px; background: url(/static/images/btnm.gif) top center no-repeat; }
+.block form input.submit.mid:hover { background: url(/static/images/btnm_.gif) top center no-repeat; }
 
-.block form input.submit.long { width: 165px; background: url(/images/btnb.gif) top center no-repeat; }
-.block form input.submit.long:hover { background: url(/images/btnb_.gif) top center no-repeat; }
+.block form input.submit.long { width: 165px; background: url(/static/images/btnb.gif) top center no-repeat; }
+.block form input.submit.long:hover { background: url(/static/images/btnb_.gif) top center no-repeat; }
 
 
 /* Small blocks */
 
 .block.small {
 	width: 580px;
-	background: url(/images/bnds.gif) bottom center no-repeat;
+	background: url(/static/images/bnds.gif) bottom center no-repeat;
 	}
 
 div.left_section {float: left; clear: none; }
@@ -696,8 +696,8 @@ div.right_section {float: right; clear: none; }
 .block.small.left { float: left; clear: none; }
 .block.small.right { float: right; clear: none; }
 
-.block.small .block_head { background: url(/images/bheads.gif) top center no-repeat; }
-.block.small .block_content { background: url(/images/bbgs.gif) top center repeat-y; }
+.block.small .block_head { background: url(/static/images/bheads.gif) top center no-repeat; }
+.block.small .block_content { background: url(/static/images/bbgs.gif) top center repeat-y; }
 
 .block.small .block_content textarea { width: 414px; }
 
@@ -749,7 +749,7 @@ div.right_section {float: right; clear: none; }
 .block .block_content .imglist li ul {
 	position: absolute;
 	z-index: 10;
-	background: url(/images/imgo.gif) center no-repeat;
+	background: url(/static/images/imgo.gif) center no-repeat;
 	width: 62px;
 	height: 58px;
 	left: 19px;
@@ -784,14 +784,14 @@ div.right_section {float: right; clear: none; }
 	outline: none;
 	}
 	
-.block .block_content .imglist li ul li.view a:hover { background: url(/images/imgt.gif) bottom center no-repeat; }
-.block .block_content .imglist li ul li.delete a:hover { background: url(/images/imgb.gif) top center no-repeat; }
+.block .block_content .imglist li ul li.view a:hover { background: url(/static/images/imgt.gif) bottom center no-repeat; }
+.block .block_content .imglist li ul li.delete a:hover { background: url(/static/images/imgb.gif) top center no-repeat; }
 
 
 /* Footer */
 
 #footer {
-	background: url(/images/ft.gif) 0 0 repeat-x;
+	background: url(/static/images/ft.gif) 0 0 repeat-x;
 	padding: 10px 0 50px;
 	font-size: 10px;
 	color: #757575;
