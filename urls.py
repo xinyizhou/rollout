@@ -22,6 +22,11 @@ urlpatterns = patterns('',
     #
     (r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'index/login.html'}),
     (r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/login/?logout=1'}),
+    
+    #
+    # app imports
+    #
+    (r'^deploy/', include('deploy.urls')),
 )
 
 
