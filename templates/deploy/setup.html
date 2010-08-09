@@ -1,41 +1,27 @@
 {% extends "base.html" %}
 
-{% load deploy_tags %}
+{% block js_content %}
+    <script type='text/javascript' src='/static/js/deploy/setup.js'></script>
+{% endblock %}
 
 {% block main_content %}
-
-
-    
            <div class="left_section">
             <div class="block small ">
                 <div class="block_head">
-                    <h2>Recent Activity</h2>
+                    <h2>Setup Environment</h2>
                 </div>  
                 
                 <div class="block_content">
- 
-                    <table width="100%">
-                        <thead>
+                    <form method="POST">
+                        {% csrf_token %}
+                        
+                        <table width="100%">
+                            {{form.as_table}}
                             <tr>
-                                <th>Date</th>
-                                <th>Action</th>
+                                <td colspan="2"><input class="submit small" type="button" name="login" value="Add" id="add" /></td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            {% for domain in domains %}
-                                <tr class="{% cycle 'row' 'row2' %}">
-                                    <td>{{domain.domain}}</td>
-                                    <td>
-                                        {% pyif domain.active %}
-                                            <img src="/images/icons/yes.gif">
-                                        {% else %}
-                                            <img src="/images/icons/no.gif">
-                                        {% endif %}
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                        </table>
+                    </form>
                 </div>
             </div>
         </div>
@@ -43,33 +29,42 @@
         <div class="right_section">
             <div class="block small ">
                 <div class="block_head">
-                    <h2>Attention</h2>    
+                    <h2>Help</h2>    
                 </div>  
                 
                 <div class="block_content">
-                    {% get_new_projects as projects %}
-                    
-                    {% pyif projects.count > 0 %}
-                        <p>The following projects are new and require a setup</p>
-                        <ul>
-                        {% for project in projects %}
-                            <li><a href="/deploy/setup/{{project.id}}/">{{project}}</a></li>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
-            </div>
-            
-            <div class="block small ">
-                <div class="block_head">
-                    <h2>Quick Commands</h2>    
-                </div>  
-                
-                <div class="block_content">
-
+                    <p>
+                        You need to setup your environments. If you don't have multiple environments just click finish below and your default
+                        environment will be called production.
+                    </p>
                 </div>
             </div>
         </div>
 
+        <div class="right_section">
+            <div class="block small ">
+                <div class="block_head">
+                    <h2>Added Environments</h2>    
+                </div>  
+                
+                <div class="block_content">
+                    <ul class="envs">
+                        {% for env in envs %}
+                            <li><img src="/static/images/remove.gif" class="remove_env" id="{{env.id}}">{{env.name}} ({{env.function}})</li>
+                        {% endfor %}
+                    </ul>
+                    <p>
+                        <form>
+                            <input class="submit small" type="button" name="login" value="Finish"/>
+                        </form>
+                    </p>
 
+                    <div class="message info" id="show_env_warning" {% pyif envs.count > 0 %} style="display:none;"{% endif %}>
+                        <p>
+                            You do not have an environments setup, so you are defaulting to production
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 {% endblock %}

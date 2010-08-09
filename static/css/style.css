@@ -826,3 +826,13 @@ tr.row:hover, tr.row2:hover {
 	cursor:pointer;
 }
 
+ul.envs li {
+	border: 1px solid #CCC;
+	padding: 5px 5px 5px 15px;
+	margin-top: 10px;
+}
+
+ul.envs li img {
+	padding-right: 5px;
+	cursor: pointer;
+}

@@ -50,6 +50,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'middleware.auth.LoginRequiredMiddleware',
     'middleware.error.AjaxErrorMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'rollout.urls'
@@ -72,8 +73,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'global_tags',
-    'deploy'
+    'deploy',
+    'debug_toolbar',
 )
+
+INTERNAL_IPS = ('127.0.0.1',)
 
 LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/"
